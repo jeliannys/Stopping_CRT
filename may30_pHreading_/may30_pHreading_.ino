@@ -37,29 +37,37 @@ void Calibrate() {
   float voltage1, voltage2; // Corresponding analog voltage values
 
   // Prompt user to place pH probe in solution 1
-  Serial.println("Place the pH probe in solution 1 and press Enter");
-  waitForEnter();  // Wait for user to press Enter
+  //Serial.println("Place the pH probe in solution 1 and press Enter");
+  //waitForEnter();  // Wait for user to press Enter
 
   // Prompt user for pH value 1
-  Serial.println("Enter pH value 1:");
-  while (!Serial.available()) {}  // Wait for input
-  pH1 = Serial.parseFloat();     // Read pH value from serial monitor
+  //Serial.println("Enter pH value 1:");
+  //while (!Serial.available()) {}  // Wait for input
+  //pH1 = Serial.parseFloat();     // Read pH value from serial monitor
+  pH1 = 10;
 
   // Read analog voltage for solution 1
-  voltage1 = analogRead(analogPin) * 0.0048828125;  // Convert analog reading to voltage
+  //voltage1 = analogRead(analogPin) * 0.0048828125;  // Convert analog reading to voltage
+  voltage1 = 3.510742;
+  //Serial.println(voltage1,6);
+  //waitForEnter();
   delay(100);  // Delay for stability
 
   // Prompt user to place pH probe in solution 2
-  Serial.println("Place the pH probe in solution 2 and press Enter");
-  waitForEnter();  // Wait for user to press Enter
+  //Serial.println("Place the pH probe in solution 2 and press Enter");
+  //waitForEnter();  // Wait for user to press Enter
 
   // Prompt user for pH value 2
-  Serial.println("Enter pH value 2:");
-  while (!Serial.available()) {}  // Wait for input
-  pH2 = Serial.parseFloat();     // Read pH value from serial monitor
+  //Serial.println("Enter pH value 2:");
+  //while (!Serial.available()) {}  // Wait for input
+  //pH2 = Serial.parseFloat();     // Read pH value from serial monitor
+  pH2 = 4;
 
   // Read analog voltage for solution 2
-  voltage2 = analogRead(analogPin) * 0.0048828125;  // Convert analog reading to voltage
+  //voltage2 = analogRead(analogPin) * 0.0048828125;  // Convert analog reading to voltage
+  voltage2 = 0.986328;
+  //Serial.println(voltage2,6);
+  //waitForEnter();
   delay(100);  // Delay for stability
 
   // Calculate the slope and intercept of the linear relationship
